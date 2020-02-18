@@ -1,0 +1,21 @@
+﻿@model List<Genre>
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="burger_button" id="nav_icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="col-lg-2 col-md-2 col-sm-12" style="border-right: 1px solid;border-bottom: 1px solid;padding-bottom: 20px;">
+    <div class="genre__menu show_nav_list">
+        <h5 class="menu-name">Жанры</h5>
+        @foreach (var genre in Model)
+        {
+            <!--a class="dropdown-item sidebar__item" href="?genreId=@genre.Id">@genre.Name</a-->
+            <a class="dropdown-item sidebar__item">@genre.Name</a>
+        }
+    </div>
+    <button class="genre_search">Поиск</button>
+</div>

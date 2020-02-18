@@ -1,0 +1,56 @@
+﻿@model DetailPageViewModel
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Редактирование книги</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Edit", "Book", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.Hidden("Id", Model.BookInfo.Book.Id)
+                    @Html.Hidden("PictureUri", Model.BookInfo.Book.PictureUri)
+                    <div class="book__property__wrapper">
+                        <label for="Name" class="book__property__name">Имя книги</label>
+                        @Html.TextBox("Name", Model.BookInfo.Book.Name, new { @class = "book__property__input form__input" })
+                    </div>
+                    @*<div class="book__property__wrapper">
+                <label for="Author" class="book__property__name">Автор книги</label>
+                @Html.TextBox("Author", Model.Book.Author, new { @class = "book__property__input form__input" })
+            </div>*@
+                    @*<div class="book__property__wrapper">
+                <label for="GenreId" class="book__property__name">Жанр книги</label>
+                @Html.DropDownList("GenreId", Model.Genres as SelectList, new { @class = "book__property__input form__input" })
+            </div>*@
+                    <div class="book__property__wrapper">
+                        <label for="LibraryId" class="book__property__name">Библиотека</label>
+                        @Html.DropDownList("LibraryId", Model.Libraries as SelectList, new { @class = "book__property__input form__input" })
+                    </div>
+                    @* TODO: "добавить экземпляры"<div class="book__property__wrapper">
+                <label for="Quantity" class="book__property__name">Количество</label>
+                @Html.TextBox("Quantity", Model.Book.Quantity, new { @class = "book__property__input form__input", @id = "jq_quantity" })
+            </div>*@
+                    <div class="book__property__wrapper">
+                        <label for="picture" class="book__property__name">Изображение</label>
+                        <input class="form__input file__input" type="file" name="picture" accept="image/png,image/jpeg">
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="Description" class="book__property__name">Описание книги</label>
+                        @Html.TextArea("Description", Model.BookInfo.Book.Description, new { @class = "book__property__area form__input" })
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="newBookItemQuantity" class="book__property__name">Добавить экземпляров</label>
+                        <input class="form__input file__input" type="number" min="0" name="newBookItemQuantity">
+                    </div>
+                    <input type="submit" class="form__button btn btn-success btn-lg" value="Отправить" />
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>

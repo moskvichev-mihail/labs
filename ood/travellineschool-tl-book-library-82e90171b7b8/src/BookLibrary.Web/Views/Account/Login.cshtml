@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout_Empty";
+    @model LoginModel
+}
+
+<div class="container">
+    <div class="login__window" id="jq__login__window">
+        <div class="login__header">
+            <h2>Вход на сайт</h2>
+        </div>
+        <div class="login__form">
+            <form action="Login" asp-anti-forgery="true" method="post" id="jq__login__form">
+                <div class="validation" validation-summary="ModelOnly"></div>
+                    @Html.TextBox("Email", "", new { @class = "form__input form__input__login jq__login__item", @placeholder = "Email", @autocomplete = "off" })
+                    @Html.Password("Password", "", new { @class = "form__input form__input__login jq__login__item", @placeholder = "Пароль", @autocomplete = "new-password" })
+                    <input type="submit" value="Войти" class="btn btn-success btn-lg form__button login__button" id="jq__join__login__button">
+            </form>
+        </div>
+    </div>
+</div>

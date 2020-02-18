@@ -1,0 +1,12 @@
+﻿@model BookInfo
+<a class="book__link" href="~/book?bookId=@Model.Book.Id">
+    <div class="wrapper__book">
+        <div class="book">
+            <img src=@Model.Book.PictureUri alt="@Model.Book.Name" class="book__img__small smaller__image">
+            <div class="book__text">
+                <h6 class="book__name">@Model.Book.Name</h6>
+                <p class="book__author">@BookUtil.GetString(Model.Authors)</p>
+            </div>
+        </div>
+    </div>
+</a>

@@ -1,0 +1,5 @@
+PROGRAM Last(INPUT, OUTPUT);
+VAR
+  Ch: CHAR;
+BEGIN
+  

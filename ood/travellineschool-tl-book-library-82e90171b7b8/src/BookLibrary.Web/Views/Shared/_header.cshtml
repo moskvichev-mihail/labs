@@ -1,0 +1,29 @@
+﻿<header class="header">
+    <div class="container">
+        <div class="row row__offset">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+                <div class="logo header__logo">
+                    <a class="logo__link link" href="/">
+                        <div class="logo__text">BookLibrary</div>
+                    </a>
+                </div>
+                <a class="btn btn-success btn-lg catalog__button" href="/catalog">
+                    <span class="">Каталог</span>
+                </a>
+            </div>
+
+            <div class="col-lg-5 col-md-6  col-sm-12">
+                <form id="jq__search__form" class="search__form">
+                    <input id="jq__dropdawn" class="inpt" type="text" autocomplete="off" placeholder="Поиск...">
+                    <button class="btn btn-success btn-lg button__find" type="submit"><span class="find__text">Найти</span></button>
+                    <div id="jq__dropdown__items__wrapper" class="dropdawn__items__wrapper"></div>
+                </form>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a href="~/account/MyBooks" class="link account__link username">@User.Identity.Name</a>
+                <a href="/account/logout" class="link account__link">Выход</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</header>

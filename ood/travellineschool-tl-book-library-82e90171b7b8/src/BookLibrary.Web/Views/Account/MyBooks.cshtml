@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "My books";
+}
+
+<div class="container">
+    <div class="row">
+
+        @Html.Partial("_sidebar")
+
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 col__none__margin">
+                <h4>Мои книги</h4>
+            </div>
+            @if ((ViewBag.Issuances as List<Issuance>).Count != 0)
+            {
+                @foreach (Issuance issuance in ViewBag.Issuances)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        @Html.Partial("_book__my_books", issuance)
+                    </div>
+                }
+            }
+            else
+            { 
+                <h5>У вас нет бронированных книг</h5>
+            }
+        </div>
+    </div>
+</div>

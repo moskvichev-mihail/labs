@@ -1,0 +1,31 @@
+﻿$main-font: 'Source Sans Pro', Arial, Sans serif;
+$small_image_width: 170px;
+$small_image_height: $small_image_width * 1.33;
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: none;
+}
+
+body {
+    min-width: 320px;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.clear {
+    clear: both;
+}
+
+@import "main.scss";
+@import "header.scss";
+@import "catalog.scss";
+@import "detailed-page.scss";
+@import "account.scss";

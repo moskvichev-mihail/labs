@@ -1,0 +1,16 @@
+﻿@model KeyValuePair<int, int>
+
+@if (Model.Key != 1)
+{
+    <a class="link__item page__item"
+       href="?page=@QueryFunctions.GetPrevPage(@Model.Key)">
+        <img class="arrow__icon svg" src="../images/icons/left_arrow.svg" title="">
+    </a>
+}
+@if (Model.Value != Model.Key && Model.Value != 0)
+{
+    <a class="link__item page__item"
+       href="?page=@QueryFunctions.GetNextPage(@Model.Key)">
+        <img class="arrow__icon arrow__icon__right svg" src="../images/icons/right_arrow.svg">
+    </a>
+}

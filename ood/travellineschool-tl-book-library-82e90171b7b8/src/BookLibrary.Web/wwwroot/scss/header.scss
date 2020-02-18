@@ -1,0 +1,54 @@
+
+.dropdown__item {
+}
+
+.book__text__search {
+    padding: 5px;
+}
+
+.dropdawn__items__wrapper {
+    z-index: 3;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+    border: 1px solid rgba(133, 133, 133, 0.51);
+}
+
+.account__link {
+    display: block;
+    padding: 12px 0;
+    float: left;
+}
+
+.username {
+    margin-right: 20px;
+}
+
+.catalog__button {
+}
+
+.logo__text {
+    font-size: 24px;
+}
+
+.header__logo {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .username {
+        margin: 0;
+    }
+
+    .account__link {
+        float: none;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .header__logo {
+        display: none;
+    }
+}

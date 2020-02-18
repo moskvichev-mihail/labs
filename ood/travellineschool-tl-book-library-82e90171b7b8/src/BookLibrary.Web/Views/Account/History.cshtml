@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "History";
+    @model AccountHistoryViewModel
+}
+
+<div class="container">
+    <div class="row">
+
+        @Html.Partial("_sidebar")
+
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 col__none__margin">
+                <h4>История</h4>
+            </div>
+            @if (Model.Issuances.Count != 0)
+            {
+                @foreach (var issuance in Model.Issuances)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        @Html.Partial("_book__my_history", issuance)
+                    </div>
+                }
+            }
+            else
+            {
+                <h5>Вы ни одной книги еще не бронировали</h5>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-0"></div>
+        <div class="col-lg-10 col-md-10 col-sm-12">
+            @Html.Partial("_page", new KeyValuePair<int, int>(Model.Page, Model.MaxPage))
+        </div>
+    </div>
+</div>

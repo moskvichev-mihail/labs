@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "My Reviews";
+}
+
+<div class="container">
+    <div class="row">
+
+        @Html.Partial("_sidebar")
+
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 col__none__margin">
+                <h4 class="account__sidebar__name">Мои отзывы</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                @if ((ViewBag.Reviews as List<Review>).Count != 0)
+                {
+                    @foreach (Review review in ViewBag.Reviews)
+                    {
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            @Html.Partial("_review", review)
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h5>Вы еще не оставляли отзывов</h5>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

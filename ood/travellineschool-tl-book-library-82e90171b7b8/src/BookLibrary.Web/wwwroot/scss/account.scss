@@ -1,0 +1,85 @@
+﻿.book__property__wrapper {
+    margin-bottom: 20px;
+}
+
+.book__property__name {
+    font-weight: 500;
+    width: 100%;
+}
+
+.book__property__input {
+    width: 400px;
+    margin-top: 0px;
+    max-width: 90%;
+}
+
+.book__property__area {
+    width: 700px;
+    margin-top: 0px;
+    max-width: 90%;
+    height: 180px;
+}
+
+.login__button {
+    &:hover {
+        .link__text {
+            color: turquoise;
+        }
+    }
+}
+
+.login__window {
+    width: 400px;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.form__input__login {
+    width: 400px;
+    max-width: 100%;
+}
+
+.login__button {
+    width: 90px;
+}
+
+.my__book__wrapper {
+    min-height: 430px;
+
+    &:hover {
+        background: none;
+
+        .book__name {
+            text-decoration: none;
+        }
+    }
+}
+
+.return__button {
+    margin-top: 0;
+}
+
+.account__sidebar__name {
+    margin-bottom: 10px;
+}
+
+.book__full__name {
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.review__link {
+    color: black;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .my__book__wrapper {
+        min-height: 0;
+        height: 200px;
+    }
+}

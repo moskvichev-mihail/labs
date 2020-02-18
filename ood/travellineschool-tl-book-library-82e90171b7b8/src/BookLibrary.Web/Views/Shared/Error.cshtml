@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Error";
+}
+
+
+<div class="container">
+    <h3 class="text-danger">Произошла ошибка во время обработки запроса</h3>
+    @if (@ViewBag.Message != null)
+    {
+        <p class="text-danger">@ViewBag.Message</p>
+    }
+    else
+    {
+        <p class="text-danger">Что-то пошло не так</p>
+    }
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model Issuance
+<div class="wrapper__book my__book__wrapper">
+    <div class="book">
+        <a href="~/book?bookId=@Model.Book.Id">
+            <img src=@Model.Book.SmallPictureUri alt="@Model.Book.Name" class="book__img__small">
+        </a>
+        <div class="book__text">
+            <h6 class="book__name">@Model.Book.Name</h6>
+            <p class="book__author">@Model.Book.Author</p>
+            @if (DateTime.Now > @Model.DateOfReturn)
+            {
+                <p class="book__author book__author__fail">Выдано до: @Model.DateOfReturn.ToShortDateString()</p>
+            }
+            else
+            {
+                <p class="book__author">Выдано до: @Model.DateOfReturn.ToShortDateString()</p>
+            }
+            <form method="post" action="/Account/ReturnBook" id="" class="jq__return__form">
+                @Html.Hidden("BookId", Model.BookId)
+                @Html.Hidden("Id", Model.Id)
+                @Html.Hidden("UserId", Model.UserId)
+                @Html.Hidden("IssuanceDate", Model.IssuanceDate)
+                @Html.Hidden("BookIsReturned", true)
+                <input type="submit" value="Вернуть" class="btn btn-success btn-lg form__button return__button jq__return__button" id="">
+            </form>
+        </div>
+    </div>
+</div>

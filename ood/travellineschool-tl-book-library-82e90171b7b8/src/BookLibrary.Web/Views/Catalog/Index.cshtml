@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Catalog";
+    @model CatalogIndexViewModel
+}
+
+<div class="container">
+    <div class="row">
+
+        @Html.Partial("_sidebar", Model.Genres)
+
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+            @if (Model.BooksInfos.Count != 0)
+            {
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12 col__none__margin">
+                    <h4>@Common.GetGenreName(Model.Genres, Model.GenreId)</h4>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12 col__none__margin">
+                    <a id="jq__receipt__date" class="link__item"
+                       href="?@QueryFunctions.GetCatalogUri(Model.SearchString, "receiptDate", Common.GetAgainstOrderBy(Model.OrderBy), Model.GenreId)">
+                        <span>Дата поступления</span>
+                    </a>
+                    <a id="jq__popularity" class="link__item"
+                       href="?@QueryFunctions.GetCatalogUri(Model.SearchString, "popularity", Common.GetAgainstOrderBy(Model.OrderBy), Model.GenreId)">
+                        <span>Популярность</span>
+                    </a>
+                </div>
+                @foreach (var bookInfo in Model.BooksInfos)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+                        @Html.Partial("_book", bookInfo)
+                    </div>
+                }
+            }
+            else
+            {
+                <h2 class="text-danger">Книг с требуемыми параметрами нет</h2>
+            }
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                @Html.Partial("_page", Model)
+            </div>
+        </div>
+    </div>
+</div>

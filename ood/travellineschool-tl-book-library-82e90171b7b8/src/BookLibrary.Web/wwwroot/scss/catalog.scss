@@ -1,0 +1,173 @@
+﻿
+.wrapper__book {
+    padding: 10px;
+    min-height: 370px;
+    transition-duration: 0.4s;
+}
+
+.arrow__icon {
+    width: 48px;
+    height: 48px;
+}
+
+.page__item:hover {
+    .arrow__icon path {
+        fill: #4a68ac;
+    }
+}
+
+.col__none__margin {
+    padding: 0;
+}
+
+.wrapper__book:hover {
+    background: rgba(26, 230, 211, 0.78);
+    border-radius: 5px;
+
+    .wrapper__book {
+        opacity: 0.85;
+    }
+
+    .book__name {
+        text-decoration: underline;
+    }
+}
+
+.book {
+    margin: 0 auto;
+}
+
+.book__text {
+}
+
+.book__name {
+}
+
+.genre__menu {
+}
+
+.sort__arrow__up {
+    background-image: url(https://www.iconfinder.com/icons/211623/arrow_b_up_icon#size=24);
+}
+
+.sort__arrow__up:after {
+    padding-left: 4px;
+    content: "↑";
+}
+
+.sort__arrow__down:after {
+    padding-left: 4px;
+    content: "↓";
+}
+
+
+.link__item {
+    color: black;
+    padding-right: 10px;
+    transition: 0.4s;
+}
+
+.link__item:hover {
+    text-decoration: none;
+}
+
+
+.link__item:hover {
+    color: turquoise;
+}
+
+@media only screen and (max-width: 767px) {
+    .genre__menu {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.45);
+    }
+
+    .wrapper__book {
+        min-height: 0;
+        border-bottom: 2px solid rgba(63, 61, 66, 0.19);
+    }
+
+    .book {
+        display: flex;
+    }
+
+    .book__img__small {
+        max-width: $small_image_width * 0.75;
+        max-height: $small_image_height * 0.75;
+        margin-right: 15px;
+    }
+
+    .book__name {
+        margin-top: 0;
+    }
+}
+
+.burger_button {
+    display: none;
+    width: 48px;
+    margin: 15px 0;
+    height: 35px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    &.open {
+        span {
+            &:nth-child(1) {
+                top: 14px;
+                -webkit-transform: rotate(135deg);
+                -moz-transform: rotate(135deg);
+                -o-transform: rotate(135deg);
+                transform: rotate(135deg);
+            }
+
+            &:nth-child(2) {
+                width: 0;
+                left: 24px;
+            }
+
+            &:nth-child(3) {
+                top: 14px;
+                -webkit-transform: rotate(-135deg);
+                -moz-transform: rotate(-135deg);
+                -o-transform: rotate(-135deg);
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        height: 7px;
+        width: 100%;
+        background: #506a85;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2) {
+            top: 14px;
+        }
+
+        &:nth-child(3) {
+            top: 28px;
+        }
+    }
+}

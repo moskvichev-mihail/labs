@@ -1,0 +1,18 @@
+﻿@model Review
+<div class="wrapper__review">
+    <a href="/book?bookId=@Model.BookId" class="review__link">
+        <div class="review">
+            <h6 class="reviewer__name">@Model.User.Email</h6>
+            <p class="book__full__name">@Model.Book.Author @Model.Book.Name</p>
+            <p class="review__description">@Model.Description</p>
+            <p class="review__date">@Model.CreationDate</p>
+            <div class="stars reviews_stars jq__book__rating" data-rating="@Model.Rate">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+    </a>
+</div>

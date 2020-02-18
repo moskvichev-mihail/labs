@@ -1,0 +1,34 @@
+﻿@model int
+
+<div class="row" style="margin-top:40px;">
+    <div class="col-md-6">
+        <div class="well well-sm">
+            <div class="text-right">
+                <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Оставьте отзыв</a>
+            </div>
+            <div class="row" id="post-review-box" style="display:none;">
+                <div class="col-md-12">
+                    <form action="/book/AddReview" id="review__form" method="post">
+                        <input id="ratings-hidden" name="rate" type="hidden" value="1">
+                        <input name="bookId" value="@Model" type="hidden">
+                        <textarea class="form-control animated" required="required" cols="50" id="new-review" name="description"
+                                  placeholder="Напишите свой отзыв здесь..." rows="5"></textarea>
+                        <div class="text-right">
+                            <div class="stars jq__book__rating" id="jq__review__wrapper" data-rating="1">
+                                <span class="fa fa-star new__review__star"></span>
+                                <span class="fa fa-star new__review__star"></span>
+                                <span class="fa fa-star new__review__star"></span>
+                                <span class="fa fa-star new__review__star"></span>
+                                <span class="fa fa-star new__review__star"></span>
+                            </div>
+                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                                Отмена
+                            </a>
+                            <button class="btn btn-success btn-sm" id="jq__add__review" type="submit">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

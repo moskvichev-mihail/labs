@@ -1,0 +1,47 @@
+PROGRAM Split(INPUT, OUTPUT);
+VAR
+  Ch: CHAR;
+  Odds, Evens: TEXT;
+BEGIN{Split}
+  {Копирует из INPUT в Odds нечётные позиции символов}
+  ASSIGN(Odds, 'File.txt');
+  ASSIGN(Evens, 'Filee.txt');
+  REWRITE(Odds);
+  READ(INPUT, Ch);
+  WHILE Ch <> '#'
+  DO
+    BEGIN
+      IF (Ch = '1') OR (Ch = '3') OR (Ch = '5') OR (Ch = '7') OR (Ch = '9')
+      THEN
+        BEGIN
+          WRITE(Odds, Ch);
+          READ(INPUT, Ch)
+        END
+      ELSE
+        BEGIN
+          WRITE(Evens, Ch);
+          READ(INPUT, Ch)
+        END
+    END;
+  WRITELN(Odds, '#');
+  WRITELN(Evens, '#');
+  {Копирует в OUTPUT символы из Odds}
+  RESET(Odds);
+  READ(Odds, Ch);
+  WHILE Ch <> '#'
+  DO
+    BEGIN
+      WRITE(OUTPUT, Ch);
+      READ(Odds, Ch)
+    END;
+  {Копирует в OUTPUT символы из Evens}
+  RESET(Evens);
+  READ(Evens, Ch);
+  WHILE Ch <> '#'
+  DO
+    BEGIN
+      WRITE(OUTPUT, Ch);
+      READ(Evens, Ch)
+    END;
+  WRITELN(OUTPUT)
+END.

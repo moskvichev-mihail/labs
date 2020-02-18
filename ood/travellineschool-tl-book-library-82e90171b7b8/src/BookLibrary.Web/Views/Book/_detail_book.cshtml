@@ -1,0 +1,39 @@
+﻿@model DetailPageViewModel
+<div class="row">
+    <div class="detailed__book">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <img src=@Model.BookInfo.Book.PictureUri alt="@Model.BookInfo.Book.Name" class="detailed__page__book__img">
+        </div>
+        <div class="col-lg-9 col-md-6 col-sm-12 detailed__page__book__information">
+            <h3 class="detailed__page__book__name">@Model.BookInfo.Book.Name</h3>
+            @*<h6 class="detailed__page__book__status">Статус: @Translator.TranslateBookStatus(@Model.Book.Status.ToString())</h6>*@
+            <h6 class="detailed__page__book__genre">Жанры: @BookUtil.GetString(Model.BookInfo.Genres)</h6>
+            <h6 class="detailed__page__book__author">Авторы: @BookUtil.GetString(Model.BookInfo.Authors)</h6>
+            <h6 class="detailed__page__book__library">Текущее местоположение: @Model.BookInfo.Book.Library.Name</h6>
+            <h6 class="rating__text">Оценка читателей:</h6>
+            <div class="stars book_rating jq__book__rating" data-rating="@Model.Rating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <div class="clear"></div>
+            <form method="post" action="/book/AddBooking" id="jq__booking__form">
+                @Html.Hidden("BookId", Model.BookInfo.Book.Id)
+                <a class="btn btn-success btn-lg" id="jq__booking__button"><span class="link__text">Забронировать</span></a>
+            </form>
+            @if (Model.Role == "admin")
+            {
+                <button type="button" class="btn btn-success edit__button" data-toggle="modal" data-target="#exampleModalLong">Редактировать</button>
+                @Html.Partial("_edit_book_modal", Model)
+            }
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="detailed__page__book__description__div">
+        <h3 class="detailed__page__book__description__title">О книге</h3>
+        <p class="detailed__page__book__description">@Model.BookInfo.Book.Description</p>
+    </div>
+</div>

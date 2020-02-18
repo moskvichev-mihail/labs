@@ -1,0 +1,113 @@
+$image_width: 250px;
+$image_height: $image_width * 1.33;
+
+.detailed__book {
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.book__title {
+    padding: 20px;
+}
+
+.edit__button  {
+    margin-top: 20px;
+}
+
+.detailed__page__book__name {
+    padding-bottom: 20px;
+}
+
+.detailed__page__book__status {
+    padding-bottom: 10px;
+}
+
+.animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.stars {
+    margin: 20px 0;
+    font-size: 24px;
+    color: #808080;
+}
+
+.detailed__page__book__genre {
+    padding-bottom: 10px;
+}
+
+.detailed__page__book__author {
+    padding-bottom: 10px;
+}
+
+.detailed__page__book__library {
+}
+
+.detailed__page__book__img {
+    width: 100%;
+    max-height: $image_height;
+    display: block;
+    max-width: $image_width;
+}
+
+.detailed__page__book__information {
+
+    padding-bottom: 50px;
+    padding-left: 30px;
+}
+
+.detailed__page__button {
+    float: none;
+}
+
+.detailed__page__book__description__div {
+
+}
+
+.detailed__page__book__description__title {
+    text-align: center;
+}
+
+.detailed__page__book__description {
+    padding: 10px;
+}
+
+.checked {
+    color: orange;
+}
+
+.wrapper__review {
+    width : 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.47);
+}
+
+.reviews_stars {
+    margin-top: 0;
+}
+
+.review__date {
+    margin-bottom: 0;
+}
+
+.book_rating {
+    margin-left: 20px;
+    display:inline-block;
+    margin-top: 0;
+}
+
+.rating__text {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+    .detailed__page__book__img {
+        margin-bottom: 10px;
+    }
+
+    .detailed__page__book__information {
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+}

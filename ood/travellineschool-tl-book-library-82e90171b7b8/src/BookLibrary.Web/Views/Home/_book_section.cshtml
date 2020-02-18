@@ -1,0 +1,15 @@
+﻿@model KeyValuePair<string, List<Book>>
+<section>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+            <h4>@Model.Key</h4>
+        </div>
+
+        @foreach (var book in Model.Value)
+        {
+            <div class="col-lg-2 col-md-4 col-sm-12 col-12">
+                @Html.Partial("_book", book)
+            </div>
+        }
+    </div>
+</section>

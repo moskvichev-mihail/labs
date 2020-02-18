@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Management";
+}
+
+<div class="container">
+    <div class="row">
+
+        @Html.Partial("_sidebar")
+
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 col__none__margin">
+                <h4>Управление</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                @using (Html.BeginForm("Management", "account", FormMethod.Post, new { @id = "jq__management__form", enctype = "multipart/form-data" }))
+                {
+                    <div class="book__property__wrapper">
+                        <label for="Name" class="book__property__name">Имя книги</label>
+                        @Html.TextBox("Name", "", new { @class = "book__property__input form__input" })
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="Author" class="book__property__name">Автор книги</label>
+                        @Html.TextBox("Author", "", new { @class = "book__property__input form__input" })
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="GenreId" class="book__property__name">Жанр книги</label>
+                        @Html.DropDownList("GenreId", ViewBag.Genres as SelectList, new { @class = "book__property__input form__input" })
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="LibraryId" class="book__property__name">Библиотека</label>
+                        @Html.DropDownList("LibraryId", ViewBag.Libraries as SelectList, new { @class = "book__property__input form__input" })
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="Status" class="book__property__name">Статус книги</label>
+                        @Html.DropDownList("Status", Translator.GetTranslatedBookStatusList(new BookStatus()) as SelectList, new { @class = "book__property__input form__input", @id = "jq_status" })
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="Quantity" class="book__property__name">Количество</label>
+                        @Html.TextBox("Quantity", 1, new { @class = "book__property__input form__input", @id = "jq_quantity" })
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="smallPicture" class="book__property__name">Маленькое изображение</label>
+                        <input class="book__property__input form__input file__input" type="file" name="smallPicture" accept="image/png,image/jpeg">
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="bigPicture" class="book__property__name">Большое изображение</label>
+                        <input class="book__property__input form__input file__input" type="file" name="bigPicture" accept="image/png,image/jpeg">
+                    </div>
+                    <div class="book__property__wrapper">
+                        <label for="Description" class="book__property__name">Описание книги</label>
+                        @Html.TextArea("Description", "", new { @class = "book__property__area form__input" })
+                    </div>
+                    <input type="submit" id="jq__book__submit" class="form__button btn btn-success btn-lg" onclick="return false;" value="Отправить" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,16 @@
+﻿@model CatalogIndexViewModel
+
+@if (Model.Page != 1)
+{
+    <a class="link__item page__item"
+       href="?@QueryFunctions.GetCatalogUri(Model.SearchString, Model.Sort, Model.OrderBy, Model.GenreId)&page=@QueryFunctions.GetPrevPage(@Model.Page)">
+        <img class="arrow__icon svg" src="../images/icons/left_arrow.svg" title="">
+    </a>
+}
+@if (Model.MaxPage != Model.Page && Model.MaxPage != 0)
+{
+    <a class="link__item page__item"
+       href="?@QueryFunctions.GetCatalogUri(Model.SearchString, Model.Sort, Model.OrderBy, Model.GenreId)&page=@QueryFunctions.GetNextPage(@Model.Page)">
+        <img class="arrow__icon arrow__icon__right svg" src="../images/icons/right_arrow.svg">
+    </a>
+}

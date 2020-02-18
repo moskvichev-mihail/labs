@@ -1,0 +1,18 @@
+{
+    "iisSettings": {
+        "windowsAuthentication": false,
+        "anonymousAuthentication": true,
+        "iisExpress": {
+            "applicationUrl": "http://localhost:16885/",
+            "sslPort": 0
+        }
+    },
+    "profiles": {
+        "BookLibrary.Web": {
+            "commandName": "Project",
+            "launchBrowser": true,
+            "launchUrl": "catalog",
+            "applicationUrl": "http://localhost:16886/"
+        }
+    }
+}

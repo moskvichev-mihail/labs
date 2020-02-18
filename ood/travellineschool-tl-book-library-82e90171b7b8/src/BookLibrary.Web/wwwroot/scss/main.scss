@@ -1,0 +1,318 @@
+.header {
+    border-bottom: 1px solid #E6EAEA;
+    background: #f4f7f6;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+    padding: .65rem 1.5rem;
+    font-size: 1rem;
+}
+
+.link_disabled {
+    pointer-events: none;
+}
+
+.arrow__icon__right {
+    float: right;
+}
+
+
+
+.sidebar__item {
+    padding: 10px 0;
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    transition-duration: 0.4s;
+}
+
+.sidebar__item.active {
+    padding-left: 20px;
+    background: #4a68ac;
+}
+
+.sidebar__item:hover {
+    padding-left: 20px;
+    background: #4a68ac;
+}
+
+.genre_search {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    color: white;
+    background: #4a68ac;
+    border: none;
+    padding: 10px 0;
+}
+
+.btn.btn-success {
+    color: #fff;
+    background-color: #4a68ac;
+    border-color: #4a68ac;
+}
+
+.btn.btn-success:focus {
+    color: #fff;
+    background-color: #4a68ac;
+    border-color: #4a68ac;
+}
+
+
+.btn.btn-success:hover {
+    color: #fff;
+    background-color: #4965a4;
+    border-color: #4965a4;
+}
+
+.btn.btn-success.disabled, .btn-success:disabled {
+    color: #fff;
+    background-color: #425d9a;
+    border-color: #425d9a;
+}
+
+.btn.btn-success:not(:disabled):not(.disabled):active,
+.btn.btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #425d9a;
+    border-color: #425d9a;
+}
+
+.book__name {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.book__author {
+    color: #4f5c6b;
+}
+
+.book__author__fail {
+    color: red;
+}
+
+.book__author, .book__name {
+    text-align: left;
+}
+
+.book__img__small {
+    width: 100%;
+    height: $small_image_height;
+    display: block;
+    max-width: $small_image_width;
+}
+
+.smaller__image {
+    height: 145px * 1.33;
+    max-width: 145px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+    outline: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header__image {
+    max-width: 40px;
+    width: 100%;
+}
+
+
+.button {
+    background: #4a68ac linear-gradient(to bottom, #5574b8, #3c589d);
+    color: #ffffff;
+    padding: 12px 19px;
+    border-radius: 3px;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    border: 0;
+    outline: 0;
+}
+
+.button:hover,
+.button:focus {
+    color: turquoise;
+    border-left: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.inpt {
+    margin-right: -8px;
+    margin-top: 1px;
+    width: 230px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: white;
+    background-image: url(../images/icons/search_icon.png);
+    background-position: 8px 5.5px;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    padding: 7.5px 20px 10.5px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+.inpt:hover {
+    -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.drop-down-helper {
+    opacity: 0;
+    display: none;
+}
+
+.inpt:focus {
+    border-color: #5170b4;
+    width: 70%;
+}
+
+.inpt:focus .drop-down-helper {
+    opacity: 1;
+    display: block;
+}
+
+.link:hover {
+    color: turquoise;
+}
+
+.input {
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease-in-out;
+}
+
+.input:hover {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+    outline: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link__text {
+    color: #f1f1f1;
+    font-size: 16px;
+}
+
+.logo__link:hover {
+    text-decoration: none;
+}
+
+.logo__text {
+    font: 400 26px/44px Helvetica, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.32);
+}
+
+.page {
+    font: 13px Helvetica, Arial, sans-serif;
+}
+
+.page__inner {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.row__offset {
+    padding: 8px 0;
+}
+
+.text_left {
+    text-align: left;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.text_right {
+    text-align: right;
+}
+
+.title {
+    font: 600 1.675rem/1.9rem BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    margin: 30px 0 12px;
+    padding: 0;
+    color: #3b4746;
+}
+
+.join__button {
+    display: block;
+    float: right;
+}
+
+@media only screen and (max-width: 767px) {
+    .header {
+        margin-bottom: 10px;
+    }
+
+    clear__sm {
+        clear:both;
+    }
+
+    .join__button {
+        clear: both;
+        float: left;
+    }
+
+    .search__form {
+        clear: both;
+        min-width: 270px;
+        margin: 10px 0;
+    }
+
+    .inpt {
+        width: 196px;
+    }
+}
+
+.file__input {
+    overflow: hidden;
+}
+
+.form__input {
+    margin-top: 15px;
+    padding: 5px;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: rgba(128, 128, 128, 0.5);
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #808080;
+
+    &:hover {
+        border-color: turquoise;
+    }
+}
+
+.form__button {
+    margin-top: 15px;
+}
